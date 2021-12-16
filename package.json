@@ -1,0 +1,11 @@
+{
+  "name": "oop-shorts",
+  "version": "0.0.1",
+  "description": "A dashboard for students to access short tasks from the OOP class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Bazo <alexanderbazo@googlemail.com>",
+  "license": "MIT"
+}

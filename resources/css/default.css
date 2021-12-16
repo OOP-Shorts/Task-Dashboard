@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+@import url("/vendors/fontello/css/oop-shorts-icons.css");
+
+:root {
+    --rich-black-fogra-29: #121619ff;
+    --popstar: #B6465F;
+    --cultured: #fafafaff;
+    --sea-green: #09814aff;
+    --indian-yellow: #db9d47ff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cultured);
+    color: var(--rich-black-fogra-29);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    width: 100vw;
+    background-color: var(--popstar);
+}
+
+content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 5vh auto;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    color: var(--popstar);
+}
+
+h1 .title-highlight {
+    display: inline-block;
+    background-color: var(--popstar);
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--cultured)
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.25em;
+    color: var(--popstar);
+}
+
+ul.tasks {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 80vw;
+    list-style: none;
+}
+
+ul.tasks li {
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+    margin: 1vw;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+}
+
+ul.tasks li .category {
+    padding: 0.25vh;
+    background-color: var(--rich-black-fogra-29);
+    font-weight: 500;
+    text-align: center;
+    color: var(--cultured);
+}
+
+ul.tasks li .title {
+    padding: 0.25vh;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.25em;
+    color: var(--rich-black-fogra-29);
+}
+
+ul.tasks li .description {
+    padding: 0.5vh 3vh;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 1em;
+    color: var(--rich-black-fogra-29);
+}
+
+ul.tasks li .topics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 1vh;
+    list-style: none;
+}
+
+
+ul.tasks li .topics li {
+    flex-basis: content;
+    flex-shrink: 0;
+    margin: 1vh;
+    padding: 1vh;
+    text-align: center;
+    background-color: var(--popstar);
+    line-height: 1em;
+    color: var(--cultured);
+}
+
+ul.tasks li .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.25vh;
+    background-color: var(--indian-yellow);
+    color: var(--cultured);
+}
+
+ul.tasks li .actions span {
+    padding: 1vh;
+    font-size: 1.25em;
+}
+
+ul.tasks li .actions a {
+    color: var(--cultured);
+}
+
+ul.tasks li .actions a:hover {
+    color: var(--popstar);
+}
