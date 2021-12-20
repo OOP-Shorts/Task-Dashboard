@@ -59,9 +59,8 @@ content > h2 {
 }
 
 ul.tasks {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    columns: 3 28vw;
+    column-gap: 1vw;
     margin: 0;
     padding: 0;
     width: 90vw;
@@ -71,8 +70,7 @@ ul.tasks {
 ul.tasks > li {
     display: flex;
     flex-direction: column;
-    width: 28vw;
-    margin: 1vw;
+    margin-bottom: 1vw;
     border-radius: 4px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     overflow: hidden;
@@ -213,6 +211,7 @@ ul.tasks li .topics li {
 
 ul.tasks li .actions {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-around;
     padding: 0.25vh;
