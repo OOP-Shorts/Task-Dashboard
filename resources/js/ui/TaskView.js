@@ -18,7 +18,6 @@ function removeCompletedTaskFromStorage(taskId) {
     localStorage.setItem("COMPLETED_TASK", JSON.stringify(completedTasks));
 }
 
-
 class TaskView {
 
     setRoot(el) {

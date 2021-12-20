@@ -60,6 +60,8 @@ content > h2 {
 
 ul.tasks {
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     margin: 0;
     padding: 0;
     width: 90vw;
@@ -83,6 +85,7 @@ ul.tasks > li .category {
     font-weight: 500;
     line-height: 2em;
     text-align: center;
+    text-transform: capitalize;
     color: var(--cultured);
 }
 

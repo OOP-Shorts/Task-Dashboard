@@ -17,7 +17,7 @@ class Task {
         this.id = id;
         this.title = title;
         this.category = category;
-        this.description = description;
+        this.description = converter.makeHtml(description);
         this.topics = topics;
         this.starter = starter;
         this.solution = solution;
@@ -48,7 +48,7 @@ class Task {
     static fromRepo(repo) {
         let id = repo.id,
             title = repo.name.substring(repo.name.indexOf("-") + 1).replaceAll("-", " "),
-            category = repo.topics.find((topic) => topic.startsWith("category-")).replace("category-", "").replaceAll("-", " "),
+            category = (repo.topics.find((topic) => topic.startsWith("category-")) || "").replace("category-", "").replaceAll("-", " "),
             description = repo.description,
             topics = repo.topics.filter((topic) => topic !== "published" && !topic.startsWith("category-")),
             starter = STARTER_DOWNLOAD.replace("$FULL_NAME", repo.full_name),
