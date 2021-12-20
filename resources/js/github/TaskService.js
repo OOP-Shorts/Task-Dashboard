@@ -6,7 +6,18 @@ async function fetchAvailableTasksFrom(source) {
     let response = await fetch(API_URL.replace("$SOURCE", source)),
         repos = await response.json(),
         taskRepos = repos.filter((repo) => repo.topics.includes("published"));
-    return taskRepos.map(taskRepo => Task.fromRepo(taskRepo));
+    return taskRepos.map(taskRepo => Task.fromRepo(taskRepo)).sort((a, b) => {
+        if(a.position.category < b.position.category) {
+            return -1;
+        }
+        if(a.position.category > b.position.category) {
+            return 1;
+        }
+        if(a.position.inCategory < b.position.inCategory) {
+            return -1;
+        }
+        return 1;
+    });
 }
 
 class TaskService {

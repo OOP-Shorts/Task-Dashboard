@@ -13,8 +13,9 @@ async function getHintsFromRepo(repo) {
 
 class Task {
 
-    constructor(id, title, category, description, topics, starter, solution, support) {
+    constructor(id, position, title, category, description, topics, starter, solution, support) {
         this.id = id;
+        this.position = position;
         this.title = title;
         this.category = category;
         this.description = converter.makeHtml(description);
@@ -46,15 +47,24 @@ class Task {
     }
 
     static fromRepo(repo) {
-        let id = repo.id,
+        let task, id = repo.id,
             title = repo.name.substring(repo.name.indexOf("-") + 1).replaceAll("-", " "),
             category = (repo.topics.find((topic) => topic.startsWith("category-")) || "").replace("category-", "").replaceAll("-", " "),
             description = repo.description,
-            topics = repo.topics.filter((topic) => topic !== "published" && !topic.startsWith("category-")),
+            topics = repo.topics.filter((topic) => topic !== "published" && !topic.startsWith("category-") && !topic.startsWith("position-")),
             starter = STARTER_DOWNLOAD.replace("$FULL_NAME", repo.full_name),
             solution = SOLUTION_DOWNLOAD.replace("$FULL_NAME", repo.full_name),
             support = repo.homepage,
-            task = new Task(id, title, category, description, topics, starter, solution, support);
+            position = {
+                category: 9999,
+                inCategory: 9999,
+            },
+            positionString = repo.topics.find((topic) => topic.startsWith("position-"));
+        if(positionString) {
+            position.category = positionString.split("-")[1];
+            position.inCategory = positionString.split("-")[2];
+        }
+        task = new Task(id, position, title, category, description, topics, starter, solution, support);
         getHintsFromRepo(repo).then((hints) => task.hints = hints);
         return task;
     }

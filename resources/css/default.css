@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+@import url("./pyro.css");
 
 :root {
     --rich-black-fogra-29: #121619ff;
@@ -20,12 +21,44 @@ body {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
-    height: 5vh;
+    height: 8vh;
     width: 100vw;
+    z-index: 9999;
     background-color: var(--popstar);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+nav span {
+    margin: 2vh;
+    line-height: 4vh;
+    font-size: 3vh;
+    color: var(--cultured);
+}
+
+nav span .box {
+    border-radius: 4px;
+    padding: 0.5vh;
+    background-color: var(--indian-yellow);
+}
+
+nav span a {
+    text-decoration: none;
+    color: var(--cultured);
+    font-weight: 600;
+}
+
+nav span a:hover {
+    cursor: pointer;
+    color: var(--indian-yellow);
+}
+
+nav span:last-child {
+    margin-right: 10vh;
 }
 
 content {
@@ -33,17 +66,17 @@ content {
     flex-direction: column;
     align-items: center;
     width: 90vw;
-    margin: 5vh auto;
+    margin: 10vh auto;
     font-family: 'Space Grotesk', sans-serif;
 }
 
-content > h1 {
+content>h1 {
     text-align: center;
     font-weight: 700;
     color: var(--popstar);
 }
 
-content > h1 .title-highlight {
+content>h1 .title-highlight {
     display: inline-block;
     background-color: var(--popstar);
     margin-left: 10px;
@@ -52,9 +85,11 @@ content > h1 .title-highlight {
     color: var(--cultured)
 }
 
-content > h2 {
+content>h2 {
     margin-top: 0;
-    font-size: 1.25em;
+    margin-bottom: 4vh;
+    font-size: 1em;
+    line-height: 1.5em;
     color: var(--popstar);
 }
 
@@ -67,7 +102,7 @@ ul.tasks {
     list-style: none;
 }
 
-ul.tasks > li {
+ul.tasks>li {
     display: flex;
     flex-direction: column;
     margin-bottom: 1vw;
@@ -77,7 +112,35 @@ ul.tasks > li {
     background-color: var(--popstar);
 }
 
-ul.tasks > li .category {
+ul.tasks>li.description {
+    background-color: var(--cultured);
+    border-radius: none;
+    box-shadow: none;
+    padding: 2vh;
+    text-align: justify;
+}
+
+ul.tasks>li.description b {
+    display: block;
+    text-align: center;
+    font-size: 1.25em;
+    color: var(--popstar);
+}
+
+ul.tasks>li.description * {
+    display: contents;
+}
+
+
+ul.tasks>li.closed .category,
+ul.tasks>li.closed .title,
+ul.tasks>li.closed .description,
+ul.tasks>li.closed .hints,
+ul.tasks>li.closed .topics {
+    filter: grayscale();
+}
+
+ul.tasks>li .category {
     padding: 0.25vh;
     background-color: var(--indian-yellow);
     font-weight: 500;
@@ -87,58 +150,70 @@ ul.tasks > li .category {
     color: var(--cultured);
 }
 
-ul.tasks > li.closed {
-    filter:grayscale();
-}
-
-
-ul.tasks > li .category .text {
+ul.tasks>li .category .text {
     display: inline-block;
     text-align: center;
     padding-left: 10%;
     width: 80%;
 }
 
-ul.tasks > li .category i {
+ul.tasks>li .category i {
     display: inline-block;
     width: 10%;
     font-size: 1.25em;
     line-height: 1.25em;
 }
 
-ul.tasks > li .category i:hover {
+ul.tasks>li .category i:hover {
     cursor: pointer;
     color: var(--popstar);
 }
 
-ul.tasks > li .category i:before {
+ul.tasks>li .category i:before {
     content: '\e805';
 }
 
-ul.tasks > li.closed .category i:before {
+ul.tasks>li.closed .category i:before {
     content: '\e804';
 }
 
-ul.tasks > li .title {
+ul.tasks>li .title {
     padding: 0.25vh;
     font-weight: 700;
     text-align: center;
     font-size: 1.25em;
     color: var(--cultured);
+    background-color: var(--popstar);
 }
 
-ul.tasks > li .description {
+ul.tasks>li .description {
     padding: 0.5vh 3vh;
     font-weight: 300;
     text-align: justify;
     font-size: 1em;
     color: var(--cultured);
+    background-color: var(--popstar);
+
 }
 
-ul.tasks li .hints .text h1,h2,h3,h4 {
+ul.tasks>li .hints {
+    background-color: var(--popstar);
+
+}
+
+ul.tasks li .hints .text h1,
+h2,
+h3,
+h4 {
     padding: 0 3vh;
     text-align: center;
     color: var(--cultured);
+}
+
+ul.tasks li .hints .text iframe {
+    display: block;
+    margin: 0 auto;
+    width: 28vw !important;
 }
 
 ul.tasks li .hints .text ul {
@@ -169,7 +244,7 @@ ul.tasks li .hints .menu {
 }
 
 ul.tasks li .hints .menu i:hover {
-    cursor:pointer;
+    cursor: pointer;
     color: var(--indian-yellow);
 }
 
@@ -178,11 +253,11 @@ ul.tasks li .hints.closed {
     overflow: hidden;
 }
 
-ul.tasks li .hints.closed .menu i:before{
+ul.tasks li .hints.closed .menu i:before {
     content: '\f13a';
 }
 
-ul.tasks li .hints .menu i:before{
+ul.tasks li .hints .menu i:before {
     content: '\f139';
 }
 
@@ -194,6 +269,7 @@ ul.tasks li .topics {
     margin: 0;
     padding: 1vh;
     list-style: none;
+    background-color: var(--popstar);
 }
 
 
@@ -222,6 +298,18 @@ ul.tasks li .actions {
 ul.tasks li .actions span {
     padding: 1vh;
     font-size: 1.25em;
+}
+
+ul.tasks li .actions span[data-action="solution"] i {
+    color: var(--indian-yellow);
+}
+
+ul.tasks li.closed .actions span[data-action="solution"] i {
+    color: var(--cultured);
+}
+
+ul.tasks li.closed .actions span[data-action="solution"] i:hover {
+    color: var(--popstar);
 }
 
 ul.tasks li .actions a {
