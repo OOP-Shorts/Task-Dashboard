@@ -1,9 +1,10 @@
 
 .icon-starter:before { content: '\e800'; } /* '' */
-.icon-up:before { content: '\e801'; } /* '' */
 .icon-solution:before { content: '\e802'; } /* '' */
-.icon-down:before { content: '\e803'; } /* '' */
-.icon-done:before { content: '\e804'; } /* '' */
+.icon-closed:before { content: '\e804'; } /* '' */
 .icon-open:before { content: '\e805'; } /* '' */
 .icon-support:before { content: '\e806'; } /* '' */
 .icon-search:before { content: '\e807'; } /* '' */
+.icon-cancel-circled:before { content: '\e809'; } /* '' */
+.icon-collapse:before { content: '\f139'; } /* '' */
+.icon-expand:before { content: '\f13a'; } /* '' */
