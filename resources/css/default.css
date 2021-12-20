@@ -3,10 +3,17 @@
 
 :root {
     --rich-black-fogra-29: #121619ff;
-    --popstar: #B6465F;
+    --gun-metal: #30343F;
     --cultured: #fafafaff;
-    --sea-green: #09814aff;
+    --popstar: #B6465F;
+    --sea-green: #09814a;
     --indian-yellow: #db9d47ff;
+    --neon-blue: #4d6cfa;
+    --viridian: #5b8266;
+    --languid-lavender: #d5c6e0;
+    --persian-green: #1b998b;
+    --vivid-sky-blue: #0acdff;
+
 }
 
 .hidden {
@@ -20,30 +27,45 @@ body {
     color: var(--rich-black-fogra-29);
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 8vh;
+    height: 6vh;
     width: 100vw;
     z-index: 9999;
-    background-color: var(--popstar);
+    background-color: var(--gun-metal);
     font-family: 'Space Grotesk', sans-serif;
 }
 
 nav span {
     margin: 2vh;
-    line-height: 4vh;
-    font-size: 3vh;
+    line-height: 2vh;
+    font-size: 2vh;
     color: var(--cultured);
+}
+
+nav i {
+    font-style: normal;
 }
 
 nav span .box {
     border-radius: 4px;
     padding: 0.5vh;
-    background-color: var(--indian-yellow);
+    background-color: var(--popstar);
+    font-weight: 600;
+    color: var(--cultured);
 }
 
 nav span a {
@@ -54,7 +76,7 @@ nav span a {
 
 nav span a:hover {
     cursor: pointer;
-    color: var(--indian-yellow);
+    opacity: 0.75;
 }
 
 nav span:last-child {
@@ -66,14 +88,15 @@ content {
     flex-direction: column;
     align-items: center;
     width: 90vw;
-    margin: 10vh auto;
+    margin: 0 auto;
     font-family: 'Space Grotesk', sans-serif;
 }
 
 content>h1 {
     text-align: center;
+    font-size: 2.25em;
     font-weight: 700;
-    color: var(--popstar);
+    color: var(--gun-metal);
 }
 
 content>h1 .title-highlight {
@@ -90,16 +113,17 @@ content>h2 {
     margin-bottom: 4vh;
     font-size: 1em;
     line-height: 1.5em;
-    color: var(--popstar);
+    color: var(--gun-metal);
 }
 
 ul.tasks {
     columns: 3 28vw;
     column-gap: 1vw;
-    margin: 0;
+    margin: 0 0 10vh 0;
     padding: 0;
     width: 90vw;
     list-style: none;
+    color: var(--gun-metal);
 }
 
 ul.tasks>li {
@@ -109,7 +133,7 @@ ul.tasks>li {
     border-radius: 4px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     overflow: hidden;
-    background-color: var(--popstar);
+    background-color: var(--gun-metal);
 }
 
 ul.tasks>li.description {
@@ -124,7 +148,7 @@ ul.tasks>li.description b {
     display: block;
     text-align: center;
     font-size: 1.25em;
-    color: var(--popstar);
+    color: var(--gun-metal);
 }
 
 ul.tasks>li.description * {
@@ -132,12 +156,8 @@ ul.tasks>li.description * {
 }
 
 
-ul.tasks>li.closed .category,
-ul.tasks>li.closed .title,
-ul.tasks>li.closed .description,
-ul.tasks>li.closed .hints,
-ul.tasks>li.closed .topics {
-    filter: grayscale();
+ul.tasks>li.closed {
+    filter: opacity(0.5)
 }
 
 ul.tasks>li .category {
@@ -148,6 +168,42 @@ ul.tasks>li .category {
     text-align: center;
     text-transform: capitalize;
     color: var(--cultured);
+}
+
+ul.tasks>li[data-category="grundlagen"] .category {
+    background-color: var(--indian-yellow);
+}
+
+ul.tasks>li[data-category="grundlagen"] .topics li {
+    background-color: var(--indian-yellow);
+}
+
+ul.tasks>li.description[data-category="grundlagen"] b {
+    color: var(--indian-yellow);
+}
+
+ul.tasks>li[data-category="events"] .category {
+    background-color: var(--neon-blue);
+}
+
+ul.tasks>li.description[data-category="events"] b {
+    color: var(--neon-blue);
+}
+
+ul.tasks>li[data-category="events"] .topics li {
+    background-color: var(--neon-blue);
+}
+
+ul.tasks>li[data-category="oop"] .category {
+    background-color: var(--viridian);
+}
+
+ul.tasks>li.description[data-category="oop"] b {
+    color: var(--viridian);
+}
+
+ul.tasks>li[data-category="events"] .oop li {
+    background-color: var(--viridian);
 }
 
 ul.tasks>li .category .text {
@@ -166,7 +222,7 @@ ul.tasks>li .category i {
 
 ul.tasks>li .category i:hover {
     cursor: pointer;
-    color: var(--popstar);
+    color: var(--gun-metal);
 }
 
 ul.tasks>li .category i:before {
@@ -183,7 +239,7 @@ ul.tasks>li .title {
     text-align: center;
     font-size: 1.25em;
     color: var(--cultured);
-    background-color: var(--popstar);
+    background-color: var(--gun-metal);
 }
 
 ul.tasks>li .description {
@@ -192,13 +248,12 @@ ul.tasks>li .description {
     text-align: justify;
     font-size: 1em;
     color: var(--cultured);
-    background-color: var(--popstar);
+    background-color: var(--gun-metal);
 
 }
 
 ul.tasks>li .hints {
-    background-color: var(--popstar);
-
+    background-color: var(--gun-metal);
 }
 
 ul.tasks li .hints .text h1,
@@ -208,6 +263,15 @@ h4 {
     padding: 0 3vh;
     text-align: center;
     color: var(--cultured);
+}
+
+ul.tasks li .hints .text img {
+    display: block;
+    margin: 0 auto;
+    width: 20vw;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    filter: grayscale();
 }
 
 ul.tasks li .hints .text iframe {
@@ -245,7 +309,7 @@ ul.tasks li .hints .menu {
 
 ul.tasks li .hints .menu i:hover {
     cursor: pointer;
-    color: var(--indian-yellow);
+    opacity: 0.75;
 }
 
 ul.tasks li .hints.closed {
@@ -269,7 +333,7 @@ ul.tasks li .topics {
     margin: 0;
     padding: 1vh;
     list-style: none;
-    background-color: var(--popstar);
+    background-color: var(--gun-metal);
 }
 
 
@@ -280,9 +344,14 @@ ul.tasks li .topics li {
     padding: 1vh;
     text-align: center;
     border-radius: 4px;
-    background-color: var(--indian-yellow);
+    background-color: var(--gun-metal);
     font-size: 0.75em;
     color: var(--cultured);
+}
+
+ul.tasks li .topics li:hover {
+    cursor: pointer;
+    opacity: 0.75;
 }
 
 ul.tasks li .actions {
@@ -291,7 +360,7 @@ ul.tasks li .actions {
     flex-direction: row;
     justify-content: space-around;
     padding: 0.25vh;
-    background-color: var(--indian-yellow);
+    background-color: var(--gun-metal);
     color: var(--cultured);
 }
 
@@ -301,7 +370,7 @@ ul.tasks li .actions span {
 }
 
 ul.tasks li .actions span[data-action="solution"] i {
-    color: var(--indian-yellow);
+    color: var(--gun-metal);
 }
 
 ul.tasks li.closed .actions span[data-action="solution"] i {
@@ -309,7 +378,7 @@ ul.tasks li.closed .actions span[data-action="solution"] i {
 }
 
 ul.tasks li.closed .actions span[data-action="solution"] i:hover {
-    color: var(--popstar);
+    opacity: 0.75;
 }
 
 ul.tasks li .actions a {
@@ -317,5 +386,5 @@ ul.tasks li .actions a {
 }
 
 ul.tasks li .actions a:hover {
-    color: var(--popstar);
+    opacity: 0.75;
 }
