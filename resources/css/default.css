@@ -186,25 +186,51 @@ ul.tasks>li[data-category="events"] .category {
     background-color: var(--neon-blue);
 }
 
-ul.tasks>li.description[data-category="events"] b {
-    color: var(--neon-blue);
-}
-
 ul.tasks>li[data-category="events"] .topics li {
     background-color: var(--neon-blue);
+}
+
+ul.tasks>li.description[data-category="events"] b {
+    color: var(--neon-blue);
 }
 
 ul.tasks>li[data-category="oop"] .category {
     background-color: var(--viridian);
 }
 
+ul.tasks>li[data-category="oop"] .topics li {
+    background-color: var(--neon-blue);
+}
+
 ul.tasks>li.description[data-category="oop"] b {
     color: var(--viridian);
 }
 
-ul.tasks>li[data-category="events"] .oop li {
-    background-color: var(--viridian);
+ul.tasks>li[data-category="arrays"] .category {
+    background-color: var(--persian-green);
 }
+
+ul.tasks>li[data-category="arrays"] .topics li {
+    background-color: var(--persian-green);
+}
+
+ul.tasks>li.description[data-category="arrays"] b {
+    color: var(--persian-green);
+}
+
+ul.tasks>li[data-category="strings"] .category {
+    background-color: var(--vivid-sky-blue);
+}
+
+ul.tasks>li[data-category="strings"] .topics li {
+    background-color: var(--vivid-sky-blue);
+}
+
+ul.tasks>li.description[data-category="strings"] b {
+    color: var(--vivid-sky-blue);
+}
+
+
 
 ul.tasks>li .category .text {
     display: inline-block;
