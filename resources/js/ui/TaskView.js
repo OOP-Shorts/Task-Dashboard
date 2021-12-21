@@ -62,7 +62,7 @@ class TaskView {
         taskEl.classList.add("task-view-item");
         taskEl.setAttribute("data-id", task.id);
         taskEl.setAttribute("data-category", task.category);
-        taskEl.querySelector(".category .text").innerHTML = task.category;
+        taskEl.querySelector(".category .text").innerHTML = `${task.position.category}. ${task.category} | Aufgabe ${task.position.inCategory}`;
         taskEl.querySelector(".title").innerHTML = task.title;
         taskEl.querySelector(".description").innerHTML = task.description;
         taskEl.querySelector("[data-action=\"starter\"] a").href = task.starter;
