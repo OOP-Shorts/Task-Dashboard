@@ -23,12 +23,13 @@ class TourGuide {
         addTourItem(".tasks .description", 3, "Kategorien", "Wir haben alle Aufgaben in Kategorien einsortiert.  Hier beschreiben wir, um welche Inhalte es genau geht.");
         addTourItem(".tasks li:not(.description)", 4, "Aufgaben", "Du kannst jede Aufgabe einzeln bearbeiten und dir theoretisch selber aussuchen wo du startest. Wir empfehlen aber, dass du alle Shorts in der vorgegebenen Reihenfolge bearbeitest.");
         addTourItem(".tasks li:not(.description) .description", 5, "Aufgabenbeschreibung", "Hier siehst du die eigentliche Aufgabenbeschreibung: Das solltest du programmieren.");
-        addTourItem(".tasks li:not(.description) .hints i", 6, "Weitere Hinweise", "Für jede Aufgabe kannst du über diese Schaltfläche weitere Hinweise einblenden. Hier beschreiben wir auch, welche Kursinhalte dir bei der Lösung der Aufgabe helfen werden." );
-        addTourItem(".tasks li:not(.description) .actions [data-action=\"starter\"]", 7, "Starterpaket", "Wie immer bekommst du von uns ein Starterpaket mit dem du direkt loslegen kannst. Alles was du zum Bearbeiten der Aufgabe brauchst, findest du dort.");
-        addTourItem(".tasks li:not(.description) .actions [data-action=\"support\"]", 8,"Fragen und Antworten", "Falls du mal nicht weiter weißt, kannst du uns im Discord schreiben. Über diesen Link erreichst du den richtigen Kanal für diese Frage.");
-        addTourItem(".tasks li:not(.description) .category i", 9, "Alles erledigt?", "Wenn du eine Aufgabe erfolgreich abgeschlossen hast, kannst du das hier markieren. Dann siehst du auch den Link zu unserem Lösungsvorschlag.");
-        addTourItem(".progress", 10, "Dein Fortschritt", "Hier siehst du jederzeit, wo du gerade stehst, und wie viele der Aufgaben du noch nicht abgeschlossen hast.");
-        addTourItem(".tasks li:not(.description)", 11, "Los geht's!", "Das war's! Viel Erfolg beim Wiederholen!");
+        addTourItem(".tasks li:not(.description) .estimate", 6, "Zeitangaben", "Hier haben wir geschätzt, wie lange du dich ungefähr mit dieser Aufgabe beschäftigen solltest, bis du eine erste funktionierende Lösung programmiert hast. Es kann sein, dass du wesentlich schneller fertig bist oder auch etwas länger brauchst. Das macht nichts. Wenn du aber viel länger ohne Erfolg an der Aufgabe sitzt, probiere vielleicht doch lieber noch eine der vorherigen Aufgaben aus.");
+        addTourItem(".tasks li:not(.description) .hints i", 7, "Weitere Hinweise", "Für jede Aufgabe kannst du über diese Schaltfläche weitere Hinweise einblenden. Hier beschreiben wir auch, welche Kursinhalte dir bei der Lösung der Aufgabe helfen werden." );
+        addTourItem(".tasks li:not(.description) .actions [data-action=\"starter\"]", 8, "Starterpaket", "Wie immer bekommst du von uns ein Starterpaket mit dem du direkt loslegen kannst. Alles was du zum Bearbeiten der Aufgabe brauchst, findest du dort.");
+        addTourItem(".tasks li:not(.description) .actions [data-action=\"support\"]", 9,"Fragen und Antworten", "Falls du mal nicht weiter weißt, kannst du uns im Discord schreiben. Über diesen Link erreichst du den richtigen Kanal für diese Frage.");
+        addTourItem(".tasks li:not(.description) .category i", 10, "Alles erledigt?", "Wenn du eine Aufgabe erfolgreich abgeschlossen hast, kannst du das hier markieren. Dann siehst du auch den Link zu unserem Lösungsvorschlag.");
+        addTourItem(".progress", 11, "Dein Fortschritt", "Hier siehst du jederzeit, wo du gerade stehst, und wie viele der Aufgaben du noch nicht abgeschlossen hast.");
+        addTourItem(".tasks li:not(.description)", 12, "Los geht's!", "Das war's! Viel Erfolg beim Wiederholen!");
     }
 
     start(force = false) {
