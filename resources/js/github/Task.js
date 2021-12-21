@@ -13,7 +13,7 @@ async function getHintsFromRepo(repo) {
 
 class Task {
 
-    constructor(id, position, title, category, description, topics, starter, solution, support) {
+    constructor(id, position, title, category, description, topics, starter, solution, support, estimate) {
         this.id = id;
         this.position = position;
         this.title = title;
@@ -23,6 +23,7 @@ class Task {
         this.starter = starter;
         this.solution = solution;
         this.support = support;
+        this.estimate = estimate;
     }
 
     getHints() {
@@ -51,7 +52,7 @@ class Task {
             title = repo.name.substring(repo.name.indexOf("-") + 1).replaceAll("-", " "),
             category = (repo.topics.find((topic) => topic.startsWith("category-")) || "").replace("category-", "").replaceAll("-", " "),
             description = repo.description,
-            topics = repo.topics.filter((topic) => topic !== "published" && !topic.startsWith("category-") && !topic.startsWith("position-")),
+            topics = repo.topics.filter((topic) => topic !== "published" && !topic.startsWith("category-") && !topic.startsWith("position-") && !topic.startsWith("estimate-")),
             starter = STARTER_DOWNLOAD.replace("$FULL_NAME", repo.full_name),
             solution = SOLUTION_DOWNLOAD.replace("$FULL_NAME", repo.full_name),
             support = repo.homepage,
@@ -59,12 +60,17 @@ class Task {
                 category: 9999,
                 inCategory: 9999,
             },
-            positionString = repo.topics.find((topic) => topic.startsWith("position-"));
+            estimate = "",
+            positionString = repo.topics.find((topic) => topic.startsWith("position-")),
+            estimateString = repo.topics.find((topic) => topic.startsWith("estimate-"));
         if(positionString) {
             position.category = positionString.split("-")[1];
             position.inCategory = positionString.split("-")[2];
         }
-        task = new Task(id, position, title, category, description, topics, starter, solution, support);
+        if(estimateString) {
+            estimate = estimateString.split("-")[1];
+        }
+        task = new Task(id, position, title, category, description, topics, starter, solution, support, estimate);
         getHintsFromRepo(repo).then((hints) => task.hints = hints);
         return task;
     }

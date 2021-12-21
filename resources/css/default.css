@@ -268,6 +268,11 @@ ul.tasks>li .title {
     background-color: var(--gun-metal);
 }
 
+ul.tasks>li .estimate {
+    margin: 0 auto;
+    color: var(--cultured);
+}
+
 ul.tasks>li .description {
     padding: 0.5vh 3vh;
     font-weight: 300;
