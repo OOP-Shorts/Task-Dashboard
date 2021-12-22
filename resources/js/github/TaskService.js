@@ -1,6 +1,6 @@
 import Task from "./Task.js";
 
-const API_URL = "https://api.github.com/orgs/$SOURCE/repos";
+const API_URL = "https://api.github.com/orgs/$SOURCE/repos?per_page=100";
 
 async function fetchAvailableTasksFrom(source) {
     let response = await fetch(API_URL.replace("$SOURCE", source)),

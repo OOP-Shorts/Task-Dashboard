@@ -28,23 +28,23 @@ class Task {
 
     getHints() {
         return new Promise((resolve, reject) => {
-            if(this.hints) {
+            if (this.hints) {
                 resolve(this.hints);
             } else {
                 let check = setInterval(() => {
-                    if(this.hints) {
-                        resolve(this.hints);
+                        if (this.hints) {
+                            resolve(this.hints);
+                            clearInterval(check);
+                            clearTimeout(timeout);
+                        }
+                    }, 500),
+                    timeout = setTimeout(() => {
                         clearInterval(check);
-                        clearTimeout(timeout);
-                    }
-                }, 500),
-                timeout = setTimeout(() => { 
-                    clearInterval(check);
-                    reject();
-                }, 5000);
+                        reject();
+                    }, 5000);
             }
         });
-        
+
     }
 
     static fromRepo(repo) {
@@ -63,11 +63,11 @@ class Task {
             estimate = "",
             positionString = repo.topics.find((topic) => topic.startsWith("position-")),
             estimateString = repo.topics.find((topic) => topic.startsWith("estimate-"));
-        if(positionString) {
+        if (positionString) {
             position.category = positionString.split("-")[1];
             position.inCategory = positionString.split("-")[2];
         }
-        if(estimateString) {
+        if (estimateString) {
             estimate = estimateString.split("-")[1];
         }
         task = new Task(id, position, title, category, description, topics, starter, solution, support, estimate);

@@ -55,6 +55,10 @@ class TaskView {
         }
     }
 
+    copyRepoURL(taskEl) {
+        navigator.clipboard.writeText(taskEl.querySelector("[data-action=\"link\"] i").getAttribute("data-repo"));
+    }
+
     append(task) {
         let previousSibling, taskEl = document.createElement("div");
         taskEl.innerHTML = TASK_TEMPLATE;
@@ -88,6 +92,7 @@ class TaskView {
         } else {
             this.root.append(taskEl);
         }
+        
         updateProgressIndicator(false);
     }
 

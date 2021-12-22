@@ -3,7 +3,6 @@
 let tourAlreadyTaken = localStorage.getItem("tourAlreadyTaken") || false;
 
 function addTourItem(selector, step, title, intro, scrollTo="element", position="auto") {
-    console.log(selector);
     let el = document.querySelector(selector);
     if(el === null) {
         return;
