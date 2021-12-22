@@ -73,8 +73,8 @@ class Task {
             positionString = repo.topics.find((topic) => topic.startsWith("position-")),
             estimateString = repo.topics.find((topic) => topic.startsWith("estimate-"));
         if (positionString) {
-            position.category = positionString.split("-")[1];
-            position.inCategory = positionString.split("-")[2];
+            position.category = parseInt(positionString.split("-")[1]);
+            position.inCategory = parseInt(positionString.split("-")[2]);
         }
         if (estimateString) {
             estimate = estimateString.split("-")[1];

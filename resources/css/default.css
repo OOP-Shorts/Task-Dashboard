@@ -230,6 +230,18 @@ ul.tasks>li.description[data-category="strings"] b {
     color: var(--vivid-sky-blue);
 }
 
+ul.tasks>li[data-category="algorithmen"] .category {
+    background-color: var(--sea-green);
+}
+
+ul.tasks>li[data-category="algorithmen"] .topics li {
+    background-color: var(--sea-green);
+}
+
+ul.tasks>li.description[data-category="algorithmen"] b {
+    color: var(--sea-green);
+}
+
 
 
 ul.tasks>li .category .text {
