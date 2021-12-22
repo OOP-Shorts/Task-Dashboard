@@ -1,13 +1,22 @@
 /* global showdown */
 
+import {
+    Errors
+} from "../utils/Log.js";
+
 const STARTER_DOWNLOAD = "https://github.com/$FULL_NAME/archive/refs/heads/starter.zip",
     SOLUTION_DOWNLOAD = "https://github.com/$FULL_NAME/archive/refs/heads/solution.zip";
 
 let converter = new showdown.Converter();
 
 async function getHintsFromRepo(repo) {
-    let reponse = await fetch(`https://raw.githubusercontent.com/${repo.full_name}/starter/README.md`),
-        text = await reponse.text();
+    let response, text = "";
+    try {
+        response = await fetch(`https://raw.githubusercontent.com/${repo.full_name}/starter/README.md`);
+        text = await response.text();
+    } catch (error) {
+        Errors.log(error);
+    }
     return converter.makeHtml(text);
 }
 
@@ -71,7 +80,7 @@ class Task {
             estimate = estimateString.split("-")[1];
         }
         task = new Task(id, position, title, category, description, topics, starter, solution, support, estimate);
-        getHintsFromRepo(repo).then((hints) => task.hints = hints);
+        getHintsFromRepo(repo).then((hints) => task.hints = hints).catch(Errors.log);
         return task;
     }
 
