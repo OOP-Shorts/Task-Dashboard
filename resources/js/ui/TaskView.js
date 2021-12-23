@@ -20,7 +20,6 @@ function createTaskElement(taskView, task) {
     taskEl.querySelector(".menu").addEventListener("click", () => taskView.toggleHints(taskEl));
     taskEl.querySelector(".category i").addEventListener("click", () => taskView.toggleStatus(taskEl));
     if (ProgressManager.isMarkedAsCompleted(task.id)) {
-        console.log("is completed");
         taskView.toggleStatus(taskEl, true);
     }
     task.topics.forEach(topic => {

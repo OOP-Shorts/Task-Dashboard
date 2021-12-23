@@ -20,6 +20,37 @@
     display: none !important;
 }
 
+.customTooltip * {
+    color: var(--gun-metal);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+
+.customTooltip.introjs-tooltip {
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: var(--popstar);
+}
+
+.customTooltip .introjs-tooltiptext {
+    text-align: justify;
+}
+
+.customTooltip .introjs-progressbar {
+    background-color: var(--popstar);
+}
+
+.customTooltip .introjs-button  {
+    background-color: var(--popstar);
+    color: var(--cultured);
+    text-shadow: none;
+    border: none;
+    border-radius: 4px;
+}
+
 body {
     margin: 0;
     padding: 0;
