@@ -38,29 +38,96 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6vh;
+    width: 100vw;
+    z-index: 9999;
+    background-color: var(--cultured);
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--gun-metal);
+}
+
+nav span {
+    margin: 1vh;
+    line-height: 2vh;
+    font-size: 2vh;
+    text-align: center;
+}
+
+nav span:after {
+    margin-left: 1vh;
+    content: "|";
+}
+
+nav span:first-child {
+    margin-left: 2vh;
+}
+
+nav span:last-child:after {
+    margin-left: 0vh;
+    content: "";
+}
+
+nav span a {
+    text-decoration: none;
+    color: var(--gun-metal);
+    font-weight: 600;
+}
+
+nav span a:hover {
+    cursor: pointer;
+    color: var(--popstar);
+}
+
+nav span[data-category="grundlagen"] a:hover {
+    color: var(--indian-yellow);
+}
+
+nav span[data-category="arrays"] a:hover {
+    color: var(--persian-green);
+}
+
+nav span[data-category="strings"] a:hover {
+    color: var(--vivid-sky-blue);
+}
+
+nav span[data-category="oop"] a:hover {
+    color: var(--viridian);
+}
+
+nav span[data-category="events"] a:hover {
+    color: var(--neon-blue);
+}
+
+nav span[data-category="algorithmen"] a:hover {
+    color: var(--sea-green);
+}
+
+.progress-indicator {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 6vh;
     width: 100vw;
     z-index: 9999;
     background-color: var(--gun-metal);
     font-family: 'Space Grotesk', sans-serif;
 }
 
-nav span {
+.progress-indicator .text {
     margin: 2vh;
-    line-height: 2vh;
+    line-height: 5vh;
     font-size: 2vh;
     color: var(--cultured);
 }
 
-nav i {
+.progress-indicator .text i {
     font-style: normal;
 }
 
-nav span .box {
+.progress-indicator .text .box {
     border-radius: 4px;
     padding: 0.5vh;
     background-color: var(--popstar);
@@ -68,19 +135,12 @@ nav span .box {
     color: var(--cultured);
 }
 
-nav span a {
-    text-decoration: none;
-    color: var(--cultured);
-    font-weight: 600;
-}
-
-nav span a:hover {
-    cursor: pointer;
-    opacity: 0.75;
-}
-
-nav span:last-child {
-    margin-right: 10vh;
+.progress-indicator .bar {
+    display: block;
+    width: 100vw;
+    min-height: 0.25vh;
+    overflow: hidden;
+    background-color: var(--popstar);
 }
 
 content {
@@ -88,7 +148,7 @@ content {
     flex-direction: column;
     align-items: center;
     width: 90vw;
-    margin: 0 auto;
+    margin: 6vh auto;
     font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -124,6 +184,37 @@ ul.tasks {
     width: 90vw;
     list-style: none;
     color: var(--gun-metal);
+}
+
+@media (max-width: 800px) { 
+    ul.tasks {
+        columns: 2 43vw;
+        column-gap: 1vw;
+        margin: 0 0 10vh 0;
+        padding: 0;
+        width: 90vw;
+        list-style: none;
+        color: var(--gun-metal);
+    }
+}
+
+@media (max-width: 480px) { 
+    ul.tasks {
+        columns: 1 88vw;
+        column-gap: 1vw;
+        margin: 0 0 10vh 0;
+        padding: 0;
+        width: 90vw;
+        list-style: none;
+        color: var(--gun-metal);
+    }
+}
+
+ul.tasks>.anchor {
+    display: block;
+    position: relative;
+    top: -6vh;
+    visibility: hidden;
 }
 
 ul.tasks>li {
@@ -199,7 +290,7 @@ ul.tasks>li[data-category="oop"] .category {
 }
 
 ul.tasks>li[data-category="oop"] .topics li {
-    background-color: var(--neon-blue);
+    background-color: var(--viridian);
 }
 
 ul.tasks>li.description[data-category="oop"] b {
@@ -241,8 +332,6 @@ ul.tasks>li[data-category="algorithmen"] .topics li {
 ul.tasks>li.description[data-category="algorithmen"] b {
     color: var(--sea-green);
 }
-
-
 
 ul.tasks>li .category .text {
     display: inline-block;
@@ -393,8 +482,6 @@ ul.tasks li .topics li {
 }
 
 ul.tasks li .topics li:hover {
-    cursor: pointer;
-    opacity: 0.75;
 }
 
 ul.tasks li .actions {

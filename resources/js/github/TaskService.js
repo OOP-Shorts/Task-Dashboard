@@ -24,8 +24,8 @@ async function fetchRepos(source, page = 1) {
     return repos;
 }
 
-function sortReposByCategory(repos) {
-    return repos.map(repo => Task.fromRepo(repo)).sort((a, b) => {
+function sortTasksByCategory(tasks) {
+    return tasks.sort((a, b) => {
         if (a.position.category < b.position.category) {
             return -1;
         }
@@ -40,7 +40,8 @@ function sortReposByCategory(repos) {
 }
 
 async function fetchAvailableTasksFrom(source) {
-    let taskRepos = [],
+    let tasks,
+        taskRepos = [],
         shouldFetchNextPage = true,
         nextPage = 1;
 
@@ -60,8 +61,8 @@ async function fetchAvailableTasksFrom(source) {
             shouldFetchNextPage = false;
         }
     }
-
-    return sortReposByCategory(taskRepos);
+    tasks = taskRepos.map((repo) => Task.fromRepo(repo));
+    return sortTasksByCategory(tasks);
 }
 
 class TaskService {

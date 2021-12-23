@@ -2,7 +2,7 @@ import ProgressIndicator from "./ProgressIndicator.js";
 
 let completedTasks = JSON.parse(localStorage.getItem("COMPLETED_TASK")) || [],
     knownTasks = [],
-    indicator = new ProgressIndicator(document.querySelector(".progress"));
+    indicator = new ProgressIndicator(document.querySelector(".progress-indicator"));
 
 function showFirework(time) {
     let firework = document.createElement("div");
@@ -20,33 +20,33 @@ function updateProgressIndicator(fromEvent = true) {
 class ProgressManager {
 
     markTaskAsClosed(taskId) {
-        if (completedTasks.includes(taskId)) {
+        if (completedTasks.includes(taskId.toString())) {
             return;
         }
-        completedTasks.push(taskId);
+        completedTasks.push(taskId.toString());
         localStorage.setItem("COMPLETED_TASK", JSON.stringify(completedTasks));
         updateProgressIndicator();
     }
 
     markTaskAsOpen(taskId) {
-        if (!completedTasks.includes(taskId)) {
+        if (!completedTasks.includes(taskId.toString())) {
             return;
         }
-        completedTasks.splice(completedTasks.indexOf(taskId), 1);
+        completedTasks.splice(completedTasks.indexOf(taskId.toString()), 1);
         localStorage.setItem("COMPLETED_TASK", JSON.stringify(completedTasks));
         updateProgressIndicator();
     }
 
     registerTask(taskId) {
-        if(knownTasks.includes(taskId)) {
+        if(knownTasks.includes(taskId.toString())) {
             return;
         }
-        knownTasks.push(taskId);
+        knownTasks.push(taskId.toString());
         updateProgressIndicator(false);
     }
 
     isMarkedAsCompleted(taskId) {
-        return completedTasks.includes(taskId);
+        return completedTasks.includes(taskId.toString());
     }
 
 }

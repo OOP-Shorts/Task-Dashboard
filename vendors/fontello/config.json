@@ -71,6 +71,24 @@
       "css": "solution",
       "code": 61726,
       "src": "fontawesome"
+    },
+    {
+      "uid": "79beb8c7fcd56e1985b70e9a120cbcbf",
+      "css": "map",
+      "code": 62073,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7fd683b2c518ceb9e5fa6757f2276faa",
+      "css": "hidden",
+      "code": 59405,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c5fd349cbd3d23e4ade333789c29c729",
+      "css": "visible",
+      "code": 59394,
+      "src": "fontawesome"
     }
   ]
 }

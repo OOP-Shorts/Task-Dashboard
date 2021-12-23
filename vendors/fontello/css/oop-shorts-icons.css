@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'oop-shorts-icons';
-  src: url('../font/oop-shorts-icons.eot?55592475');
-  src: url('../font/oop-shorts-icons.eot?55592475#iefix') format('embedded-opentype'),
-       url('../font/oop-shorts-icons.woff2?55592475') format('woff2'),
-       url('../font/oop-shorts-icons.woff?55592475') format('woff'),
-       url('../font/oop-shorts-icons.ttf?55592475') format('truetype'),
-       url('../font/oop-shorts-icons.svg?55592475#oop-shorts-icons') format('svg');
+  src: url('../font/oop-shorts-icons.eot?1850218');
+  src: url('../font/oop-shorts-icons.eot?1850218#iefix') format('embedded-opentype'),
+       url('../font/oop-shorts-icons.woff2?1850218') format('woff2'),
+       url('../font/oop-shorts-icons.woff?1850218') format('woff'),
+       url('../font/oop-shorts-icons.ttf?1850218') format('truetype'),
+       url('../font/oop-shorts-icons.svg?1850218#oop-shorts-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'oop-shorts-icons';
-    src: url('../font/oop-shorts-icons.svg?55592475#oop-shorts-icons') format('svg');
+    src: url('../font/oop-shorts-icons.svg?1850218#oop-shorts-icons') format('svg');
   }
 }
 */
@@ -56,12 +56,15 @@
 
 .icon-starter:before { content: '\e800'; } /* '' */
 .icon-time:before { content: '\e801'; } /* '' */
+.icon-visible:before { content: '\e802'; } /* '' */
 .icon-closed:before { content: '\e804'; } /* '' */
 .icon-open:before { content: '\e805'; } /* '' */
 .icon-support:before { content: '\e806'; } /* '' */
 .icon-search:before { content: '\e807'; } /* '' */
 .icon-cancel-circled:before { content: '\e809'; } /* '' */
+.icon-hidden:before { content: '\e80d'; } /* '' */
 .icon-solution:before { content: '\f11e'; } /* '' */
 .icon-collapse:before { content: '\f139'; } /* '' */
 .icon-expand:before { content: '\f13a'; } /* '' */
 .icon-link:before { content: '\f14c'; } /* '' */
+.icon-map:before { content: '\f279'; } /* '' */

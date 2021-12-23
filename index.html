@@ -14,12 +14,25 @@
 
 <body>
     <nav>
-        <span class="progress">Dein Fortschritt: <i class="finished-shorts">0</i>/<i class="total-shorts">0</i> <i class="box">Shorts</i> erledigt</span>
-        <span class="links">
-            <span class="tour"><a href="#">Tour</a></span>
-            <span class="imprint"><a href="https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/sekretariat-team/alexander-bazo/index.html">Impressum</a></span>
-        </span>
+        <span class="tour"><a href="#">Tour</a></span>
+        <span class="start"><a href="#">Start</a></span>
+        <span class="category" data-category="grundlagen"><a href="#grundlagen">Grundlagen</a></span>
+        <span class="category" data-category="arrays"><a href="#arrays">Arrays</a></span>
+        <span class="category" data-category="strings"><a href="#strings">Strings</a></span>
+        <span class="category" data-category="oop"><a href="#oop">OOP</a></span>
+        <span class="category" data-category="events"><a href="#events">Events</a></span>
+        <span class="category" data-category="algorithmen"><a href="#algorithmen">Algorithmisches Denken</a></span>
+        <span class="imprint"><a
+                href="https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/sekretariat-team/alexander-bazo/index.html">Impressum</a></span>
+
     </nav>
+    <div class="progress-indicator">
+        <span class="text">
+            <span class="progress">Dein Fortschritt: <i class="finished-shorts">0</i>/<i class="total-shorts">0</i> <i
+                    class="box">Shorts</i> erledigt</span>
+        </span>
+        <span class="bar"></span>
+    </div>
     <content>
         <h1>OOP<span class="title-highlight">Shorts</span></h1>
         <h2>Auf dieser Seite findest du eine Sammlung von Übungsaufgaben für dein Selbststudium im OOP-Kurs. Du kannst
@@ -32,32 +45,43 @@
             Fragen zu einer der Aufgaben hast: Du kannst uns direkt in den jeweils verlinkten Discord-Kanälen erreichen.
             Viel Erfolg!</h2>
         <ul class="tasks">
-            <li class="description" data-category="grundlagen"><b>Grundlagen</b>In der Kategorie "Grundlagen" findest du
+            <a class="anchor" id="grundlagen"></a>
+            <li class="description" data-category="grundlagen"><b>Grundlagen</b>In der Kategorie
+                "Grundlagen" findest du
                 einfache Aufgaben, mit denen du die wichtigsten Sprachelemente und die zentralen Bestandteile der
                 <i>Graphics App</i> noch einmal ausprobieren kannst. Konzentriere dich auf die eigentlichen Inhalte und
                 denke nicht (zu viel) über den perfekten Aufbau der Lösung nach. Versuch jede Aufgabe von Grund auf neu
                 umzusetzen und kopiere keine Aufgabenteile. Schreibe jede Zeile Code selbst.</li>
+            <a class="anchor" id="arrays"></a>
             <li class="description" data-category="arrays"><b>Datenstrukturen (Arrays)</b>In der Kategorie
                 "Datenstrukturen" findest du Aufgaben zum Umgang mit Arrays. Du kannst hier noch einmal wiederholen, wie
                 diese Felder verwendet werden, um viele Objekte gleichen Typs über eine einzelne Variable zugänglich zu
                 machen. In dem Zusammenhang schaust du dir an, wie du mit verschiedenen Schleifen über die Inhalte eines
                 Arrays iterieren kannst.</li>
-            <li class="description" data-category="strings"><b>Strings</b>In der Kategorie "Strings" findest du
+            <a class="anchor" id="strings"></a>
+            <li class="description" data-category="strings"><b>Strings</b>In der Kategorie "Strings"
+                findest du
                 Aufgaben, die sich mit der Verarbeitung von Zeichenketten beschäftigen. Du wiederholst noch einmal, wie
                 du über die Konsole Inhalte von den Nutzer*innen einlesen kannst und wie du mit Hilfe der Klassen
                 <code>String</code> und <code>Character</code> Texte bzw. einzelne Zeichen schnell und einfach abbilden
                 und verarbeiten kannst.</li>
-            <li class="description" data-category="oop"><b>OOP</b>In der Kategorie "OOP" findest du Aufgaben, mit denen
+            <a class="anchor" id="oop"></a>
+            <li class="description" data-category="oop"><b>OOP</b>In der Kategorie "OOP" findest du Aufgaben,
+                mit denen
                 du das Modellieren und Verwenden eigener Klassen trainieren kannst. Achte genau drauf, welche
                 Funktionalität du in den Klassen umsetzen sollst und wie sich die daraus erstellten Objekte verhalten
                 sollen. Denke daran, dass du Eigenschaften und Methoden einer Klasse öffentlich oder privat anlegen
                 kannst.</li>
-            <li class="description" data-category="events"><b>Events</b>In der Kategorie "Events" findest du Aufgaben,
+            <a class="anchor" id="events"></a>
+            <li class="description" data-category="events"><b>Events</b>In der Kategorie "Events" findest du
+                Aufgaben,
                 mit denen du das <i>Event-basierte-Programmieren</i> innerhalb der <i>Graphics App</i> trainieren
                 kannst. Konzentriere dich auch hier auf den eigentlichen Kern der jeweiligen Aufgabe und versuche beim
                 Programmieren, die Abläufe die sich aus der Interaktion der Nutzer*innen mit deiner Anwendung ergeben,
                 nachzuvollziehen.</li>
-            <li class="description" data-category="algorithmen"><b>Algorithmisches Denken</b>In der Kategorie
+            <a class="anchor" id="algorithmen"></a>
+            <li class="description" data-category="algorithmen"><b>Algorithmisches Denken</b>In der
+                Kategorie
                 "Algorithmisches Denken" findest du Aufgaben, mit denen du dein algorithmisches Denken trainieren
                 kannst. Hier geht es nicht mehr nur um die korrekte Anwendung der verschiedenen Sprachelemente.
                 Stattdessen musst du "echte" Probleme lösen und die vorher wiederholten Inhalte auf neue
