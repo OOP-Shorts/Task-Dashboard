@@ -22,11 +22,12 @@ function createTaskElement(taskView, task) {
     if (ProgressManager.isMarkedAsCompleted(task.id)) {
         taskView.toggleStatus(taskEl, true);
     }
+    /*
     task.topics.forEach(topic => {
         let topicEl = document.createElement("li");
         topicEl.innerHTML = topic;
         taskEl.querySelector(".topics").append(topicEl);
-    });
+    });*/
     task.getHints().then((hints) => {
         taskEl.querySelector(".hints .text").innerHTML = hints;
     });
