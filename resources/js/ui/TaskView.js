@@ -16,7 +16,7 @@ function createTaskElement(taskView, task) {
     taskEl.querySelector(".description").innerHTML = task.description;
     taskEl.querySelector("[data-action=\"starter\"] a").href = task.starter;
     taskEl.querySelector("[data-action=\"solution\"] a").href = task.solution;
-    taskEl.querySelector("[data-action=\"support\"] a").href = task.support;
+    // taskEl.querySelector("[data-action=\"support\"] a").href = task.support;
     taskEl.querySelector(".menu").addEventListener("click", () => taskView.toggleHints(taskEl));
     taskEl.querySelector(".category i").addEventListener("click", () => taskView.toggleStatus(taskEl));
     if (ProgressManager.isMarkedAsCompleted(task.id)) {
