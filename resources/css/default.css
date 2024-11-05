@@ -43,7 +43,7 @@
     background-color: var(--popstar);
 }
 
-.customTooltip .introjs-button  {
+.customTooltip .introjs-button {
     background-color: var(--popstar);
     color: var(--cultured);
     text-shadow: none;
@@ -217,7 +217,7 @@ ul.tasks {
     color: var(--gun-metal);
 }
 
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
     ul.tasks {
         columns: 2 43vw;
         column-gap: 1vw;
@@ -229,7 +229,7 @@ ul.tasks {
     }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
     ul.tasks {
         columns: 1 88vw;
         column-gap: 1vw;
@@ -512,8 +512,7 @@ ul.tasks li .topics li {
     color: var(--cultured);
 }
 
-ul.tasks li .topics li:hover {
-}
+ul.tasks li .topics li:hover {}
 
 ul.tasks li .actions {
     display: flex;
@@ -548,4 +547,13 @@ ul.tasks li .actions a {
 
 ul.tasks li .actions a:hover {
     opacity: 0.75;
+}
+
+.authorinformation {
+    visibility: hidden;
+}
+
+.authorinformation:hover {
+    visibility: hidden;
+    font-size: small;
 }
