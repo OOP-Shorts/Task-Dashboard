@@ -558,12 +558,3 @@ ul.tasks li .actions a {
 ul.tasks li .actions a:hover {
     opacity: 0.75;
 }
-
-.authorinformation {
-    visibility: hidden;
-}
-
-.authorinformation:hover {
-    visibility: hidden;
-    font-size: small;
-}
